@@ -1,0 +1,6 @@
+*.o
+tsnake
+src/handbook_txt.cpp
+util/hbgen
+
+*.swp
