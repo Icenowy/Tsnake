@@ -5,6 +5,7 @@
 #include <libintl.h>
 #else
 #define textdomain(a)
+#define bindtextdomain(a,b)
 #define gettext(a) a
 #endif
 

@@ -14,11 +14,12 @@ LDFLAGS ?=
 LIBS ?= -lncurses
 
 PREFIX ?= $(PWD)
+LOCALEDIR ?= NULL
 
 TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o
 
-CFLAGS += -DPREFIX=$(PREFIX)
-CXXFLAGS += -DPREFIX=$(PREFIX)
+CFLAGS += -DPREFIX="\"$(PREFIX)\""
+CXXFLAGS += -DPREFIX="\"$(PREFIX)\"" -DLOCALEDIR=$(LOCALEDIR)
 
 all: tsnake
 
