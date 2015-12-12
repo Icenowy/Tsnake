@@ -16,7 +16,7 @@ LIBS ?= -lncurses
 PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale
 
-TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o
+TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/snake.o
 
 CFLAGS += -DPREFIX="\"$(PREFIX)\""
 CXXFLAGS += -DPREFIX="\"$(PREFIX)\"" -DLOCALEDIR="\"$(LOCALEDIR)\""
@@ -30,13 +30,15 @@ src/global_var.o: src/global_var.cpp src/global_var.h src/cur_strutils.h
 
 src/main.o: src/main.cpp src/game.h src/global_var.h src/handbook.h src/cur_strutils.h src/tsgettext.h
 
-src/game.o: src/game.cpp src/split.h src/game.h src/cur_strutils.h src/tsgettext.h src/map.h
+src/game.o: src/game.cpp src/split.h src/game.h src/cur_strutils.h src/tsgettext.h src/map.h src/snake.h src/point.h
 
 src/split.o: src/split.cpp src/split.h src/global_var.h src/cur_strutils.h
 
 src/cur_strutils.o: src/cur_strutils.cpp src/cur_strutils.h
 
-src/map.o: src/map.h src/matrix.h src/global_var.h
+src/map.o: src/map.cpp src/map.h src/matrix.h src/global_var.h
+
+src/snake.o: src/snake.cpp src/snake.h src/map.h src/matrix.h src/point.h src/global_var.h
 
 src/handbook_txt.o: src/handbook_txt.cpp src/handbook.h
 

@@ -5,6 +5,9 @@
 
 #include "split.h"
 #include "map.h"
+#include "snake.h"
+
+static snake *sn;
 
 void splash ()
 {
@@ -19,5 +22,9 @@ void game_main ()
 	init_map ();
 	randomize_map ();
 	generate_food ();
-	sleep (5);
+	sn = snake::init_snake ();
+	for (int i = 0; i<10; i++) {
+		sleep (1);
+		sn->step();
+	}
 }
