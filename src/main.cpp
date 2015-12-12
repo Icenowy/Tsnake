@@ -42,6 +42,7 @@ static void init_environment ()
 	}
 	std::setlocale (LC_ALL, "");
 	bindtextdomain ("tsnake", LOCALEDIR);
+	textdomain ("tsnake");
 }
 
 static void init_screen ()

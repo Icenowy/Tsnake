@@ -22,4 +22,4 @@ msgstr "***终端贪吃蛇 0.0.0***"
 
 #: src/game.cpp:11
 msgid "To read the handbook, please use --help"
-msgstr "***使用--help参数来阅读游戏手册"
+msgstr "使用 --help 参数来阅读游戏手册"
