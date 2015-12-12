@@ -43,6 +43,10 @@ src/handbook_txt.cpp: src/handbook.txt util/hbgen
 
 tsnake: $(TSNAKE_OBJS)
 	$(CXXLD) $(TSNAKE_OBJS) -o tsnake $(LIBS) $(LDFLAGS)
+
+update-pot:
+	sh po/update-pot.sh
+
 clean:
 	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen
-.PHONY: all clean
+.PHONY: all clean update-pot

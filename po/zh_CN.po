@@ -1,0 +1,25 @@
+# Translation template for tsnake.
+# Copyleft (C) 2015 Icenowy Zheng
+# This file is distributed under the same license as the tsnake package.
+# Icenowy Zheng <icenowy@outlook.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-12 22:08+0800\n"
+"PO-Revision-Date: 2015-12-12 22:11+0800\n"
+"Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
+"Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/game.cpp:10
+msgid "***Tsnake Version 0.0.0***"
+msgstr "***终端贪吃蛇 0.0.0***"
+
+#: src/game.cpp:11
+msgid "To read the handbook, please use --help"
+msgstr "***使用--help参数来阅读游戏手册"
