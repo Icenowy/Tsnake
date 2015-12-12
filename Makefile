@@ -55,4 +55,4 @@ install-mo: po/zh_CN.mo
 
 clean:
 	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen
-.PHONY: all clean update-pot
+.PHONY: all clean update-pot install-mo
