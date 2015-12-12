@@ -16,7 +16,7 @@ public:
 	T& at (size_t x, size_t y) {
 		if (x >= xsize || y >= ysize)
 			throw std::range_error ("matrix: at() out of index");
-		return mem[y*ysize + x];
+		return mem[y*xsize + x];
 	}
 
 	T &operator() (size_t x, size_t y) {
