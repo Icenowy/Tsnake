@@ -1,12 +1,15 @@
 #include <iostream>
 #include <curses.h>
 
-void splash()
+#include "split.h"
+
+void splash ()
 {
 	
 }
 
-void game_main()
+void game_main ()
 {
-	splash();
+	init_split ();
+	splash ();
 }
