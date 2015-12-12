@@ -40,11 +40,12 @@ static void init_environment ()
 			if (pgrows < MIN_ROWS) pgrows = MIN_ROWS;
 		}
 	}
+	std::setlocale (LC_ALL, "");
+	textdomain ("tsnake");
 }
 
 static void init_screen ()
 {
-	std::setlocale (LC_ALL, "");
 	::initscr (); // initialize the screen
 
 	int lines, rows;
