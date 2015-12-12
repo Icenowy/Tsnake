@@ -1,0 +1,9 @@
++-------------------------------+|        Goods
++          Playground           +|   29 columns wide
++   At least 48 columns wide    +|
++   At least 18 rows tall       +|
++                               +|
++-------------------------------+|
+           Infomation            |
+        4 columns tall           |
+                                 |
