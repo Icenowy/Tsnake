@@ -3,6 +3,7 @@
 #include <clocale>
 #include <iostream>
 #include <cstring>
+#include <ctime>
 #include <signal.h>
 #include "tsgettext.h"
 
@@ -40,9 +41,12 @@ static void init_environment ()
 			if (pgrows < MIN_ROWS) pgrows = MIN_ROWS;
 		}
 	}
+
 	std::setlocale (LC_ALL, "");
 	bindtextdomain ("tsnake", LOCALEDIR);
 	textdomain ("tsnake");
+
+	std::srand (std::time (NULL));
 }
 
 static void init_screen ()

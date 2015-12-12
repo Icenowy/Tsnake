@@ -33,6 +33,7 @@ struct map_tile {
 
 extern matrix<map_tile> *pmap;
 extern WINDOW *map_win;
+extern int map_width, map_height;
 
 inline matrix<map_tile> &map () { return *pmap; }
 
@@ -47,5 +48,7 @@ inline void invalid_map_tile (int x, int y, bool refresh = true) {
 }
 
 void invalid_map_rect (int x1, int y1, int width, int height, bool refresh = true);
+
+void generate_food ();
 
 #endif

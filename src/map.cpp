@@ -2,23 +2,31 @@
 #include "matrix.h"
 #include "global_var.h"
 #include <curses.h>
+#include <cstdlib>
 
 matrix<map_tile> *pmap;
 WINDOW *map_win;
+int map_width, map_height;
 
 void init_map ()
 {
 	pmap = new matrix<map_tile> (pglines, pgrows);
 	map_win = playground;
+	map_width = pglines;
+	map_height = pgrows;
 }
 
 void randomize_map ()
 {
 	// TODO: find a good map generating algorithm
 	// I cannot design one
-	for (int i = 0; i < pglines-2; i++) {
-		map() (i, pgrows/2) = map_tile (map_tile::WALL);
+	for (int i = 0; i < map_width-2; i++) {
+		map() (i, map_height/2) = map_tile (map_tile::WALL);
 	}
+	for (int i = 2; i < map_height-2; i++) {
+		map() (map_width/2, i) = map_tile (map_tile::WALL);
+	}
+	invalid_map_rect (0, 0, map_width, map_height);
 }
 
 #define CH_GROUND ' '
@@ -55,4 +63,15 @@ void invalid_map_rect (int x1, int y1, int width, int height, bool refresh)
 		}
 	}
 	if (refresh) wrefresh (map_win);
+}
+
+void generate_food ()
+{
+	int x,y;
+	do {
+		x = std::rand () % map_width;
+		y = std::rand () % map_height;
+	} while ( map() (x, y).type != map_tile::GROUND);
+	map() (x, y).type = map_tile::FOOD;
+	invalid_map_tile (x, y);
 }

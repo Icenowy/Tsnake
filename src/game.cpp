@@ -18,6 +18,6 @@ void game_main ()
 	splash ();
 	init_map ();
 	randomize_map ();
-	invalid_map_rect (0, 0, pglines, pgrows);
+	generate_food ();
 	sleep (5);
 }
