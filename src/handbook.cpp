@@ -3,5 +3,5 @@
 
 void show_handbook ()
 {
-	std::cout << handbook_txt << std::endl;
+	std::cout << &handbook_txt << std::endl;
 }

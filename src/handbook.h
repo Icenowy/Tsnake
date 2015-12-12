@@ -3,6 +3,6 @@
 
 void show_handbook();
 
-extern const char *handbook_txt;
+extern "C" const char handbook_txt;
 
 #endif

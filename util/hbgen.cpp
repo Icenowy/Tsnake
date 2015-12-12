@@ -6,7 +6,7 @@ int main ()
 
 	int count = 0;
 
-	std::printf ("const char *handbook_txt=\n\"");
+	std::printf ("extern \"C\" const char handbook_txt[]=\n\"");
 	while ( (c = getchar()) != EOF) {
 		std::printf ("\\x%x",c);
 		count++;
