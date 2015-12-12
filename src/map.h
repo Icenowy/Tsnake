@@ -4,9 +4,14 @@
 #include "matrix.h"
 
 struct map_tile {
-	enum {
-		GROUND, WALL, FOOD
-	} type;
+	static const int
+		GROUND = 0,
+		WALL = 1,
+		FOOD = 2;
+	int type;
+
+	map_tile () : type (GROUND) {}
+	map_tile (int ty) : type (ty) {}
 };
 
 extern matrix<map_tile> *pmap;
