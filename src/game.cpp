@@ -9,7 +9,6 @@ void splash ()
 {
 	wininfo->putline (gettext ("***Tsnake Version 0.0.0***"));
 	wininfo->putline (gettext ("To read the handbook, please use --help"));
-	wininfo->putline (PREFIX);
 }
 
 void game_main ()

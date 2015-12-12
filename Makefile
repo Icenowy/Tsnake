@@ -47,6 +47,12 @@ tsnake: $(TSNAKE_OBJS)
 update-pot:
 	sh po/update-pot.sh
 
+%.mo: %.po
+	msgfmt $< -o $@
+
+install-mo: po/zh_CN.mo
+	sh po/install-mo.sh "$(LOCALEDIR)"
+
 clean:
 	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen
 .PHONY: all clean update-pot
