@@ -16,7 +16,7 @@ LIBS ?= -lncurses
 PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale
 
-TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o
+TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o
 
 CFLAGS += -DPREFIX="\"$(PREFIX)\""
 CXXFLAGS += -DPREFIX="\"$(PREFIX)\"" -DLOCALEDIR="\"$(LOCALEDIR)\""
@@ -35,6 +35,8 @@ src/game.o: src/game.cpp src/split.h src/game.h src/cur_strutils.h src/tsgettext
 src/split.o: src/split.cpp src/split.h src/global_var.h src/cur_strutils.h
 
 src/cur_strutils.o: src/cur_strutils.cpp src/cur_strutils.h
+
+src/map.o: src/map.h src/matrix.h src/global_var.h
 
 src/handbook_txt.o: src/handbook_txt.cpp src/handbook.h
 
