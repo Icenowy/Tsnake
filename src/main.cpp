@@ -53,10 +53,18 @@ static void init_screen ()
 	getmaxyx (stdscr, rows, lines);
 
 	if (rows < (pgrows + EXTRA_ROWS) || lines < (pglines + EXTRA_LINES)) {
+		::endwin (); // atexit is not registered yet
 		std::cerr << "Your terminal is to small to run this game.\n";
 		std::cerr << "Required " << (pglines + EXTRA_LINES) << "Lines"
 			<< " and " << (pgrows + EXTRA_ROWS) << "rows\n";
-		::endwin (); // atexit is not registered yet
+		std::exit (1);
+	}
+
+	if (!has_colors ()) {
+		::endwin ();
+		std::cerr << "Your terminal do not support color.\n";
+		std::cerr << "Maybe your TERM environment variable is wrong "
+			"or your terminal is too old for this game.\n";
 		std::exit (1);
 	}
 
