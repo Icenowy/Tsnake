@@ -3,21 +3,25 @@
 #include <clocale>
 #include <iostream>
 #include <cstring>
+#include <signal.h>
 
 #include "game.h"
 #include "global_var.h"
 #include "handbook.h"
 
 #define MIN_ROWS 10
-#define MIN_LINES 10
+#define MIN_LINES 30
 
 #define EXTRA_ROWS 4
 #define EXTRA_LINES 30
 
+#define DEFAULT_ROWS 18
+#define DEFAULT_LINES 48
+
 void init_environment ()
 {
-	pgrows = 20;
-	pglines = 50;
+	pgrows = DEFAULT_ROWS;
+	pglines = DEFAULT_LINES;
 	const char *str_tslines = ::getenv ("TSNAKE_LINES");
 	const char *str_tsrows = ::getenv ("TSNAKE_ROWS");
 
@@ -52,11 +56,25 @@ void init_screen ()
 		::endwin (); // atexit is not registered yet
 		std::exit (1);
 	}
+
+	::noecho();
+	::cbreak();
+	::curs_set(0);
 }
 
 void finalize_screen ()
 {
 	::endwin (); // exit the curses mode. (Some modern terminals have two modes.)
+}
+
+void sigwinch (int sig)
+{
+	// TODO: response SIGWINCH positively
+	if (sig == SIGWINCH) {
+		::endwin ();
+		std::cerr << "Terminal size changed. Please restart.\n";
+		::exit(1);
+	}
 }
 
 int main (int argc, char **argv)
