@@ -15,4 +15,6 @@ inline matrix<map_tile> &map () { return *pmap; }
 
 void init_map ();
 
+void randomize_map ();
+
 #endif

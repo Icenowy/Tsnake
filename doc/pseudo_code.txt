@@ -1,0 +1,13 @@
+main:
+	init the environment;
+	init locale;
+	init screen;
+	if there's --help argument:
+		show handbook and exit;
+	call game_main;
+
+game_main:
+	init screen split;
+	show splash texts;
+	init map;
+
