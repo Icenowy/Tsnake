@@ -18,7 +18,7 @@
 #define DEFAULT_ROWS 18
 #define DEFAULT_LINES 48
 
-void init_environment ()
+static void init_environment ()
 {
 	pgrows = DEFAULT_ROWS;
 	pglines = DEFAULT_LINES;
@@ -41,7 +41,7 @@ void init_environment ()
 	}
 }
 
-void init_screen ()
+static void init_screen ()
 {
 	std::setlocale (LC_ALL, "");
 	::initscr (); // initialize the screen
@@ -62,17 +62,17 @@ void init_screen ()
 	::curs_set(0);
 }
 
-void finalize_screen ()
+static void finalize_screen ()
 {
 	::endwin (); // exit the curses mode. (Some modern terminals have two modes.)
 }
 
-void sigwinch (int sig)
+static void sigwinch (int sig)
 {
 	// TODO: response SIGWINCH positively
 	if (sig == SIGWINCH) {
 		::endwin ();
-		std::cerr << "Terminal size changed. Please restart.\n";
+		std::cerr << "Terminal size changed. Please restart the game.\n";
 		::exit(1);
 	}
 }
@@ -86,6 +86,7 @@ int main (int argc, char **argv)
 	}
 	init_screen ();
 	std::atexit (finalize_screen); // register an atexit procedure, to ensure the terminal is restored
+	sigset (SIGWINCH, sigwinch);
 
 	game_main();
 	return 0;
