@@ -1,1 +1,6 @@
 This is the Tsnake handbook, ver 20151212.
+
+Terminal Requirments:
+	- At least 80x24 characters. (Maybe not satisfied on some mobile phone terminals.)
+	- Fast enough link. (Or you'll lose.)
+	- Colors. (Nowadays, only ancient terminals do not have colors...)
