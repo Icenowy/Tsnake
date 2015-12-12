@@ -9,11 +9,11 @@
 #include "global_var.h"
 #include "handbook.h"
 
-#define MIN_ROWS 10
-#define MIN_LINES 30
+#define MIN_ROWS 18
+#define MIN_LINES 48
 
-#define EXTRA_ROWS 4
-#define EXTRA_LINES 30
+#define EXTRA_ROWS 6
+#define EXTRA_LINES 32
 
 #define DEFAULT_ROWS 18
 #define DEFAULT_LINES 48
