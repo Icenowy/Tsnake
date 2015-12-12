@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstring>
 #include <signal.h>
+#include "tsgettext.h"
 
 #include "game.h"
 #include "global_var.h"
