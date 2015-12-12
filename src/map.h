@@ -13,4 +13,6 @@ extern matrix<map_tile> *pmap;
 
 inline matrix<map_tile> &map () { return *pmap; }
 
+void init_map ();
+
 #endif

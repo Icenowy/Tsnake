@@ -30,7 +30,7 @@ src/global_var.o: src/global_var.cpp src/global_var.h src/cur_strutils.h
 
 src/main.o: src/main.cpp src/game.h src/global_var.h src/handbook.h src/cur_strutils.h src/tsgettext.h
 
-src/game.o: src/game.cpp src/split.h src/game.h src/cur_strutils.h src/tsgettext.h
+src/game.o: src/game.cpp src/split.h src/game.h src/cur_strutils.h src/tsgettext.h src/map.h
 
 src/split.o: src/split.cpp src/split.h src/global_var.h src/cur_strutils.h
 

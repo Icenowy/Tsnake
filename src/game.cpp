@@ -4,6 +4,7 @@
 #include "tsgettext.h"
 
 #include "split.h"
+#include "map.h"
 
 void splash ()
 {
@@ -15,5 +16,6 @@ void game_main ()
 {
 	init_split ();
 	splash ();
+	init_map ();
 	sleep (5);
 }
