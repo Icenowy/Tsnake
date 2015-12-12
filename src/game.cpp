@@ -17,5 +17,7 @@ void game_main ()
 	init_split ();
 	splash ();
 	init_map ();
+	randomize_map ();
+	invalid_map_rect (0, 0, pglines, pgrows);
 	sleep (5);
 }
