@@ -21,7 +21,7 @@ int scores, moves, time_slices;
 
 static void splash ()
 {
-	wininfo->putline (gettext ("***Tsnake Version 0.0.1***"));
+	wininfo->putline (gettext ("***Tsnake Version 0.0.2***"));
 	wininfo->putline (gettext ("To read the handbook, please use --help option"));
 }
 
