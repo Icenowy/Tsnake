@@ -16,5 +16,7 @@ void init_split ()
 	mvwvline (goods_with_line, 0, 0, 0, pgrows + INFO_ROWS + 1);
 
 	wininfo = new cur_strwin (info, INFO_ROWS);
+
+	keypad (playground, true);
 	refresh ();
 }
