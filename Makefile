@@ -13,7 +13,7 @@ PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale
 BINDIR ?= $(PREFIX)/bin
 
-TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/snake.o src/mode_pause.o src/mode_end.o src/mode_play.o
+TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/map_gen.o src/snake.o src/mode_pause.o src/mode_end.o src/mode_play.o
 
 PATHS = -DPREFIX="\"$(PREFIX)\"" -DLOCALEDIR="\"$(LOCALEDIR)\""
 CXXSTD = -std=gnu++11
@@ -38,6 +38,8 @@ src/split.o: src/split.cpp src/split.h src/global_var.h src/cur_strutils.h src/c
 src/cur_strutils.o: src/cur_strutils.cpp src/cur_strutils.h
 
 src/map.o: src/map.cpp src/map.h src/matrix.h src/global_var.h src/const.h
+
+src/map_gen.o: src/map_gen.cpp src/map.h src/matrix.h src/global_var.h src/const.h
 
 src/snake.o: src/snake.cpp src/snake.h src/map.h src/matrix.h src/point.h src/global_var.h src/const.h
 
