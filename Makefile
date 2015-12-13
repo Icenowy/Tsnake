@@ -44,7 +44,7 @@ src/mode_pause.o: src/mode_pause.cpp src/mode_pause.h src/mode_play.h src/game.h
 
 src/mode_end.o: src/mode_end.cpp src/mode_end.h src/mode_play.h src/game.h
 
-src/mode_play.o: src/mode_play.cpp src/mode_play.h src/mode_end.h src/mode_pause.h src/game.h
+src/mode_play.o: src/mode_play.cpp src/mode_play.h src/mode_end.h src/mode_pause.h src/game.h src/snake.h
 
 src/handbook_txt.o: src/handbook_txt.cpp src/handbook.h
 
