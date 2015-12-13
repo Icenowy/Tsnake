@@ -21,7 +21,7 @@ void init_split ()
 
 	wininfo = new cur_strwin (info, INFO_ROWS);
 
-	bufgoods = new cur_strbuf (info);
+	bufgoods = new cur_strbuf (goods);
 	for (int i = 0; i<GOODS_FIXED_ROWS; i++)
 		bufgoods->buffer.push_back (std::string (""));
 
