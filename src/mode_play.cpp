@@ -67,6 +67,7 @@ void game_play ()
 		case 'w':
 		case 'k':
 		case KEY_UP:
+			if (sn->direction == snake::DOWN) break;
 			sn->direction = snake::UP;
 			if (!game_play_step ()) return;
 			last_move_time = time_slices;
@@ -74,6 +75,7 @@ void game_play ()
 		case 's':
 		case 'j':
 		case KEY_DOWN:
+			if (sn->direction == snake::UP) break;
 			sn->direction = snake::DOWN;
 			if (!game_play_step ()) return;
 			last_move_time = time_slices;
@@ -81,6 +83,7 @@ void game_play ()
 		case 'a':
 		case 'h':
 		case KEY_LEFT:
+			if (sn->direction == snake::RIGHT) break;
 			sn->direction = snake::LEFT;
 			if (!game_play_step ()) return;
 			last_move_time = time_slices;
@@ -88,6 +91,7 @@ void game_play ()
 		case 'd':
 		case 'l':
 		case KEY_RIGHT:
+			if (sn->direction == snake::LEFT) break;
 			sn->direction = snake::RIGHT;
 			if (!game_play_step ()) return;
 			last_move_time = time_slices;
