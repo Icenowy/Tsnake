@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 11:00+0800\n"
+"POT-Creation-Date: 2015-12-13 11:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,24 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/mode_end.cpp:17
+#, c-format
+msgid "You win! Welcome to level %d"
+msgstr ""
+
+#: src/mode_end.cpp:19
+#, c-format
+msgid "You lose. What a pity."
+msgstr ""
+
+#: src/mode_end.cpp:24 src/mode_end.cpp:41
+msgid "Press 'p' to play, or press 'q' to quit"
+msgstr ""
+
+#: src/mode_end.cpp:40
+msgid "Invalid input"
+msgstr ""
 
 #: src/mode_pause.cpp:12
 msgid "PAUSED. Press any key to continue."
