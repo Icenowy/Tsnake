@@ -9,5 +9,10 @@ main:
 game_main:
 	init screen split;
 	show splash texts;
-	init map;
+	init level;
+	set mode to mode_end;
+	call main_loop;
+
+main_loop:
+	call the function of the mode;
 
