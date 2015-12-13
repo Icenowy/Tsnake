@@ -56,6 +56,6 @@ void game_main ()
 	init_split ();
 	splash ();
 	init_level ();
-	enter_play ();
+	enter_end (true, true);
 	main_loop ();
 }
