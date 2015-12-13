@@ -7,7 +7,7 @@ CXXFLAGS ?= -g
 
 LDFLAGS ?=
 
-LIBS ?= -lncurses
+LIBS ?= -lncurses -lm
 
 PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale

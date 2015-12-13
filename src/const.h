@@ -27,6 +27,7 @@
 #define TIME_SLICE_LENGTH 50
 #define SCORES_PER_FOOD 10
 #define SCORES_PER_MOVE 0
+#define SPEED_MAX_LEVEL 15
 
 // Map
 #define MAP_VERT_WALL_BASE 2
