@@ -3,7 +3,13 @@
 
 #include <curses.h>
 #include <deque>
+#include <vector>
 #include <string>
+
+// What's the difference of cur_strwin and cur_strbuf?
+// cur_strwin is like a terminal, it can scroll; 
+// However, cur_strbuf cannot scroll, but all it's
+// lines are controllable.
 
 class cur_strwin {
 	std::deque<std::string> buffer;
@@ -18,6 +24,17 @@ public:
 
 	cur_strwin (WINDOW *w, int bsz = 100) : win (w), max_bufsize (bsz) {}
 
+};
+
+class cur_strbuf {
+	WINDOW *win;
+
+public:
+	std::vector<std::string> buffer;
+	
+	void refresh_buffer ();
+
+	cur_strbuf (WINDOW *w) : win (w) {}
 };
 
 #endif

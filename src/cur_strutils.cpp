@@ -14,6 +14,8 @@ void cur_strwin::refresh_buffer ()
 	{
 		if (j < buffer.size ())
 			mvwaddnstr (win, i, 0, buffer.at (j).c_str (), x);
+		else
+			break;
 	}
 	wrefresh (win);
 }
@@ -23,4 +25,19 @@ void cur_strwin::putline (std::string s)
 	buffer.push_back (s);
 	if (buffer.size () > max_bufsize) buffer.pop_front ();
 	refresh_buffer ();
+}
+
+void cur_strbuf::refresh_buffer ()
+{
+	int y,x;
+	getmaxyx (win, y, x);
+	werase (win);
+	for (int i = 0, j = 0;i < y;i++,j++)
+	{
+		if (j < buffer.size ())
+			mvwaddnstr (win, i, 0, buffer.at (j).c_str (), x);
+		else
+			break;
+	}
+	wrefresh (win);
 }
