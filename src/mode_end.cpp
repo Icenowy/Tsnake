@@ -3,9 +3,11 @@
 #include "mode_play.h"
 
 #include <curses.h>
+#include <unistd.h>
 #include "tsgettext.h"
 #include "global_var.h"
 
+#define GAME_END_DELAY 3
 
 void enter_end (bool good_end, bool init)
 {
@@ -15,7 +17,9 @@ void enter_end (bool good_end, bool init)
 			snprintf (str, 99, gettext ("You win! Welcome to level %d"), level);
 		else
 			snprintf (str, 99, gettext ("You lose. What a pity."));
-	wininfo->putline (str);
+		wininfo->putline (str);
+		sleep (GAME_END_DELAY);
+		init_level ();
 	}
 	wininfo->putline (gettext ("Press 'p' to play, or press 'q' to quit"));
 	game_mode = MODE_END;

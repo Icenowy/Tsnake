@@ -16,7 +16,7 @@ LIBS ?= -lncurses
 PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale
 
-TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/snake.o src/mode_pause.o src/mode_end.o
+TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/snake.o src/mode_pause.o src/mode_end.o src/mode_play.o
 
 CFLAGS += -DPREFIX="\"$(PREFIX)\""
 CXXFLAGS += -DPREFIX="\"$(PREFIX)\"" -DLOCALEDIR="\"$(LOCALEDIR)\""
@@ -43,6 +43,8 @@ src/snake.o: src/snake.cpp src/snake.h src/map.h src/matrix.h src/point.h src/gl
 src/mode_pause.o: src/mode_pause.cpp src/mode_pause.h src/mode_play.h src/game.h
 
 src/mode_end.o: src/mode_end.cpp src/mode_end.h src/mode_play.h src/game.h
+
+src/mode_play.o: src/mode_play.cpp src/mode_play.h src/mode_end.h src/mode_pause.h src/game.h
 
 src/handbook_txt.o: src/handbook_txt.cpp src/handbook.h
 
