@@ -42,7 +42,6 @@ bool game_play_step ()
 		enter_end (false);
 		return false;
 	}
-	last_move_time = time_slices;
 }
 
 int calculate_speed ()
@@ -61,10 +60,14 @@ void game_play ()
 		case 'p':
 			enter_pause ();
 			return;
+		case 'q':
+			game_mode = MODE_QUIT;
+			return;
 		case ERR:
 			// Timeout
 			if (time_slices - last_move_time < calculate_speed ()) break;
 			if (!game_play_step ()) return;
+			last_move_time = time_slices;
 			break;
 		}
 	}
