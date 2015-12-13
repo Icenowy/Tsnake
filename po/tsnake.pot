@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 12:27+0800\n"
+"POT-Creation-Date: 2015-12-13 17:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,15 +27,11 @@ msgstr ""
 msgid "You lose. What a pity."
 msgstr ""
 
-#: src/mode_end.cpp:24 src/mode_end.cpp:41
+#: src/mode_end.cpp:24
 msgid "Press 'p' to play, or press 'q' to quit"
 msgstr ""
 
-#: src/mode_end.cpp:40
-msgid "Invalid input"
-msgstr ""
-
-#: src/mode_play.cpp:30
+#: src/mode_play.cpp:31
 msgid "So hard the wall is!"
 msgstr ""
 
@@ -43,11 +39,11 @@ msgstr ""
 msgid "Destiny cannot be escaped."
 msgstr ""
 
-#: src/mode_play.cpp:38
+#: src/mode_play.cpp:37
 msgid "Why is my body so hard..."
 msgstr ""
 
-#: src/mode_play.cpp:42
+#: src/mode_play.cpp:40
 msgid "What the hell is this?!"
 msgstr ""
 
@@ -55,10 +51,18 @@ msgstr ""
 msgid "PAUSED. Press any key to continue."
 msgstr ""
 
-#: src/game.cpp:21
+#: src/game.cpp:24
 msgid "***Tsnake Version 0.0.1***"
 msgstr ""
 
-#: src/game.cpp:22
+#: src/game.cpp:25
 msgid "To read the handbook, please use --help option"
+msgstr ""
+
+#: src/game.cpp:61
+msgid "Scores: "
+msgstr ""
+
+#: src/game.cpp:65
+msgid "Moves: "
 msgstr ""
