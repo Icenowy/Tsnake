@@ -7,3 +7,5 @@ WINDOW *playground, *goods, *info;
 int pglines, pgrows;
 
 cur_strwin *wininfo;
+
+int time_slices;
