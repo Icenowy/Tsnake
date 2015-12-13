@@ -5,6 +5,8 @@
 
 #include "global_var.h"
 
+#include <cmath>
+
 void game_main ();
 
 void init_level ();
@@ -17,7 +19,9 @@ extern int scores, moves, time_slices;
 
 void update_scores_buf ();
 
-inline int calculate_speed () { return 20; }
+#define SNAKE_PI 3.14159265358979323846
+
+inline int calculate_speed () { return level < 15 ? 20 - level : 5; }
 
 inline int calculate_maxscore () { return level * 100; }
 
