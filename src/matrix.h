@@ -13,6 +13,8 @@ public:
 		mem = new T[xsz*ysz];
 	}
 
+	~matrix () { delete[] mem; }
+
 	T& at (size_t x, size_t y) {
 		if (x >= xsize || y >= ysize)
 			throw std::range_error ("matrix: at() out of index");

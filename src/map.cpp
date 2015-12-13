@@ -10,6 +10,7 @@ int map_width, map_height;
 
 void init_map ()
 {
+	if (pmap) delete pmap;
 	pmap = new matrix<map_tile> (pglines, pgrows);
 	map_win = playground;
 	map_width = pglines;
