@@ -3,6 +3,7 @@
 #include "mode_play.h"
 
 #include <curses.h>
+#include "tsgettext.h"
 #include "global_var.h"
 
 
