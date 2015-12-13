@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 11:29+0800\n"
+"POT-Creation-Date: 2015-12-13 11:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,22 @@ msgstr ""
 
 #: src/mode_end.cpp:40
 msgid "Invalid input"
+msgstr ""
+
+#: src/mode_play.cpp:29
+msgid "So hard the wall is!"
+msgstr ""
+
+#: src/mode_play.cpp:33
+msgid "Destiny cannot be escaped."
+msgstr ""
+
+#: src/mode_play.cpp:37
+msgid "Why is my body so hard..."
+msgstr ""
+
+#: src/mode_play.cpp:41
+msgid "What the hell is this?!"
 msgstr ""
 
 #: src/mode_pause.cpp:12
