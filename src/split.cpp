@@ -17,6 +17,8 @@ void init_split ()
 
 	wininfo = new cur_strwin (info, INFO_ROWS);
 
+	bufgoods = new cur_strbuf (info);
+
 	keypad (playground, true);
 	refresh ();
 }
