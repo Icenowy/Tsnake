@@ -63,7 +63,14 @@ void game_play ()
 		case 'q':
 			game_mode = MODE_QUIT;
 			return;
-		case ERR:
+		case 'w':
+		case 'k':
+		case KEY_UP:
+			sn->direction = snake::UP;
+			if (!game_play_step ()) return;
+			last_move_time = time_slices;
+			break;
+		default:
 			// Timeout
 			if (time_slices - last_move_time < calculate_speed ()) break;
 			if (!game_play_step ()) return;
