@@ -8,13 +8,14 @@
 #include "map.h"
 #include "snake.h"
 
+#include "game.h"
 #include "mode_pause.h"
 #include "mode_play.h"
 #include "mode_end.h"
 
 snake *sn;
 
-enum game_mode {MODE_PLAY, MODE_PAUSE, MODE_END, MODE_QUIT} game_mode;
+enum game_mode game_mode;
 
 int scores, moves, time_slices;
 
@@ -32,6 +33,7 @@ void init_level ()
 	if (sn) delete sn;
 	sn = snake::init_snake ();
 	time_slices = scores = moves = 0;
+	update_scores_buf ();
 }
 
 static void main_loop ()
