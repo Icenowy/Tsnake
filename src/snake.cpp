@@ -68,8 +68,10 @@ int snake::step ()
 		ret = FOOD_FOUND;
 		goto cont;
 	case map_tile::RESERVED:
-		// TODO: Do not assume it's a snake section
-		return DIE_KNOCK_SELF;
+		for (point pt : body) {
+			if (pt.x == nx && pt.y == ny)
+				return DIE_KNOCK_SELF;
+		}
 	}
 	return DIE_UNKNOWN;
 	cont:
