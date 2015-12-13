@@ -16,6 +16,8 @@ snake *sn;
 
 enum game_mode {MODE_PLAY, MODE_PAUSE, MODE_END, MODE_QUIT} game_mode;
 
+int scores, moves, time_slices;
+
 static void splash ()
 {
 	wininfo->putline (gettext ("***Tsnake Version 0.0.1***"));
@@ -29,7 +31,7 @@ void init_level ()
 	generate_food ();
 	if (sn) delete sn;
 	sn = snake::init_snake ();
-	time_slices = 0;
+	time_slices = scores = moves = 0;
 }
 
 static void main_loop ()

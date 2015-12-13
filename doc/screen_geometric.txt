@@ -1,8 +1,8 @@
-+-------------------------------+|        Goods
-+          Playground           +|   29 columns wide
++-------------------------------+|        Score
++          Playground           +|        Moves
 +   At least 48 columns wide    +|
-+   At least 18 rows tall       +|
-+                               +|
++   At least 18 rows tall       +|        Goods
++                               +|   29 columns wide
 +-------------------------------+|
            Infomation            |
         4 columns tall           |

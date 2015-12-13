@@ -9,6 +9,9 @@
 
 #define TIME_SLICE_LENGTH 50 // in ms
 
+#define SCORES_PER_FOOD 10
+#define SCORES_PER_MOVE 1
+
 int last_move_time;
 
 void enter_play ()
@@ -21,33 +24,49 @@ bool game_play_step ()
 {
 	switch (sn->step ()) {
 	case snake::ALIVE:
-		return true;
+		goto good_end;
 	case snake::FOOD_FOUND:
 		sn->increase++;
 		generate_food ();
-		return true;
+		scores += SCORES_PER_FOOD;
+		goto good_end;
 	case snake::DIE_KNOCK_WALL:
 		wininfo->putline (gettext ("So hard the wall is!"));
-		enter_end (false);
-		return false;
+		goto bad_end;
 	case snake::DIE_CROSS_EDGE:
 		wininfo->putline (gettext ("Destiny cannot be escaped."));
-		enter_end (false);
-		return false;
+		goto bad_end;
 	case snake::DIE_KNOCK_SELF:
 		wininfo->putline (gettext ("Why is my body so hard..."));
-		enter_end (false);
-		return false;
+		goto bad_end;
 	case snake::DIE_UNKNOWN:
 		wininfo->putline (gettext ("What the hell is this?!"));
-		enter_end (false);
-		return false;
+		goto bad_end;
 	}
+	good_end:
+	moves++;
+	scores += SCORES_PER_MOVE;
+	return true;
+	bad_end:
+	enter_end (false);
+	return false;
 }
 
 int calculate_speed ()
 {
 	return 20;
+}
+
+void update_scores_buf ()
+{
+	std::string sc, mv;
+	sc += gettext ("Scores: ");
+	sc += std::to_string (scores);
+	mv += gettext ("Moves: ");
+	mv += std::to_string (moves);
+	bufgoods->buffer[0] = sc;
+	bufgoods->buffer[1] = mv;
+	bufgoods->refresh_buffer ();
 }
 
 void game_play ()
@@ -103,5 +122,6 @@ void game_play ()
 			last_move_time = time_slices;
 			break;
 		}
+		update_scores_buf ();
 	}
 }

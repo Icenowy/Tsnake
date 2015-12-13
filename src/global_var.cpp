@@ -9,6 +9,4 @@ int pglines, pgrows;
 cur_strwin *wininfo;
 cur_strbuf *bufgoods;
 
-int time_slices;
-
 int level;
