@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-12 22:08+0800\n"
+"POT-Creation-Date: 2015-12-13 02:08+0800\n"
 "PO-Revision-Date: 2015-12-12 22:11+0800\n"
 "Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/game.cpp:10
+#: src/game.cpp:14
 msgid "***Tsnake Version 0.0.0***"
 msgstr "***终端贪吃蛇 0.0.0***"
 
-#: src/game.cpp:11
-msgid "To read the handbook, please use --help"
+#: src/game.cpp:15
+msgid "To read the handbook, please use --help option"
 msgstr "使用 --help 参数来阅读游戏手册"

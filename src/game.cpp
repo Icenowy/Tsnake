@@ -12,7 +12,7 @@ static snake *sn;
 void splash ()
 {
 	wininfo->putline (gettext ("***Tsnake Version 0.0.0***"));
-	wininfo->putline (gettext ("To read the handbook, please use --help"));
+	wininfo->putline (gettext ("To read the handbook, please use --help option"));
 }
 
 void game_main ()
