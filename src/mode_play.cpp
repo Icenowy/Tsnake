@@ -57,18 +57,6 @@ int calculate_speed ()
 	return 20;
 }
 
-void update_scores_buf ()
-{
-	std::string sc, mv;
-	sc += gettext ("Scores: ");
-	sc += std::to_string (scores);
-	mv += gettext ("Moves: ");
-	mv += std::to_string (moves);
-	bufgoods->buffer[0] = sc;
-	bufgoods->buffer[1] = mv;
-	bufgoods->refresh_buffer ();
-}
-
 void game_play ()
 {
 	last_move_time = time_slices;
