@@ -15,6 +15,7 @@ LIBS ?= -lncurses
 
 PREFIX ?= $(PWD)
 LOCALEDIR ?= $(PREFIX)/share/locale
+BINDIR ?= $(PREFIX)/bin
 
 TSNAKE_OBJS=src/main.o src/game.o src/global_var.o src/handbook_txt.o src/handbook.o src/split.o src/cur_strutils.o src/map.o src/snake.o src/mode_pause.o src/mode_end.o src/mode_play.o
 
@@ -24,6 +25,8 @@ CXXSTD = -std=gnu++11
 
 CFLAGS += $(PATHS)
 CXXFLAGS += $(PATHS) $(CXXSTD)
+
+DESTDIR ?=
 
 all: tsnake
 
@@ -65,8 +68,14 @@ update-pot:
 	msgfmt $< -o $@
 
 install-mo: po/zh_CN.mo
-	sh po/install-mo.sh "$(LOCALEDIR)"
+	sh po/install-mo.sh "$(DESTDIR)$(LOCALEDIR)"
+
+install-bin: tsnake
+	mkdir -p "$(DESTDIR)$(BINDIR)/"
+	install -m755 tsnake "$(DESTDIR)$(BINDIR)/"
+
+install: install-mo install-bin
 
 clean:
 	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen
-.PHONY: all clean update-pot install-mo
+.PHONY: all clean update-pot install-mo install-bin install
