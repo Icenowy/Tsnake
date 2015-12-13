@@ -4,6 +4,7 @@ src/handbook_txt.cpp
 util/hbgen
 
 share
+bin
 
 po/*.mo
 
