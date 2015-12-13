@@ -37,8 +37,6 @@ void game_end ()
 			game_mode = MODE_QUIT;
 			return;
 		default:
-			wininfo->putline (gettext ("Invalid input"));
-			wininfo->putline (gettext ("Press 'p' to play, or press 'q' to quit"));
 			break;
 		}
 	}
