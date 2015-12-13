@@ -33,5 +33,6 @@
 #define MAP_VERT_WALL_ADV 1
 #define MAP_HORI_WALL_BASE 3
 #define MAP_HORI_WALL_ADV 0
+#define MAX_MAP_LEVEL 15
 
 #endif

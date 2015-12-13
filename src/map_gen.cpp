@@ -35,13 +35,14 @@ bool floodfill_verify (matrix<bool> &mat)
 
 void randomize_map ()
 {
+	int map_level = (level > MAX_MAP_LEVEL) ? MAX_MAP_LEVEL : level;
 	matrix<bool> vrfy_mat (map_width, map_height);
 	do {
 		for (int i = 0; i<map_width; i++)
 			for (int j = 0; j<map_height; j++)
 				map() (i, j) = map_tile (map_tile::GROUND);
 
-		for (int t = 0; t< (MAP_VERT_WALL_BASE + MAP_VERT_WALL_ADV * level); t++) {
+		for (int t = 0; t< (MAP_VERT_WALL_BASE + MAP_VERT_WALL_ADV * map_level); t++) {
 			int length = std::rand () % (map_height / 2);
 			int xpos = std::rand () % map_width;
 			int ypos = std::rand () % (map_height - length);
@@ -52,7 +53,7 @@ void randomize_map ()
 					break;
 			}
 		}
-		for (int t = 0; t< (MAP_HORI_WALL_BASE + MAP_HORI_WALL_ADV * level); t++) {
+		for (int t = 0; t< (MAP_HORI_WALL_BASE + MAP_HORI_WALL_ADV * map_level); t++) {
 			int length = std::rand () % (map_width / 2);
 			int xpos = std::rand () % (map_width - length);
 			int ypos = std::rand () % map_height;
