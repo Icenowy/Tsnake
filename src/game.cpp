@@ -18,7 +18,7 @@ enum game_mode {MODE_PLAY, MODE_PAUSE, MODE_END, MODE_QUIT} game_mode;
 
 static void splash ()
 {
-	wininfo->putline (gettext ("***Tsnake Version 0.0.0***"));
+	wininfo->putline (gettext ("***Tsnake Version 0.0.1***"));
 	wininfo->putline (gettext ("To read the handbook, please use --help option"));
 }
 

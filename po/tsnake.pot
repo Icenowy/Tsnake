@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 11:47+0800\n"
+"POT-Creation-Date: 2015-12-13 12:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,19 +35,19 @@ msgstr ""
 msgid "Invalid input"
 msgstr ""
 
-#: src/mode_play.cpp:29
+#: src/mode_play.cpp:30
 msgid "So hard the wall is!"
 msgstr ""
 
-#: src/mode_play.cpp:33
+#: src/mode_play.cpp:34
 msgid "Destiny cannot be escaped."
 msgstr ""
 
-#: src/mode_play.cpp:37
+#: src/mode_play.cpp:38
 msgid "Why is my body so hard..."
 msgstr ""
 
-#: src/mode_play.cpp:41
+#: src/mode_play.cpp:42
 msgid "What the hell is this?!"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgid "PAUSED. Press any key to continue."
 msgstr ""
 
 #: src/game.cpp:21
-msgid "***Tsnake Version 0.0.0***"
+msgid "***Tsnake Version 0.0.1***"
 msgstr ""
 
 #: src/game.cpp:22

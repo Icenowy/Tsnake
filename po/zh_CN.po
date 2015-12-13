@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 11:47+0800\n"
+"POT-Creation-Date: 2015-12-13 12:27+0800\n"
 "PO-Revision-Date: 2015-12-12 22:11+0800\n"
 "Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
@@ -34,19 +34,19 @@ msgstr "按 p 键开始游戏，按 q 键退出。"
 msgid "Invalid input"
 msgstr "输入无效。"
 
-#: src/mode_play.cpp:29
+#: src/mode_play.cpp:30
 msgid "So hard the wall is!"
 msgstr "这墙好硬啊……"
 
-#: src/mode_play.cpp:33
+#: src/mode_play.cpp:34
 msgid "Destiny cannot be escaped."
 msgstr "命运怎是蝼蚁可以逃离的！"
 
-#: src/mode_play.cpp:37
+#: src/mode_play.cpp:38
 msgid "Why is my body so hard..."
 msgstr "我的身体……你为什么这么硬……"
 
-#: src/mode_play.cpp:41
+#: src/mode_play.cpp:42
 msgid "What the hell is this?!"
 msgstr "这是什么鬼？！"
 
@@ -55,8 +55,8 @@ msgid "PAUSED. Press any key to continue."
 msgstr "游戏暂停，按任意键继续"
 
 #: src/game.cpp:21
-msgid "***Tsnake Version 0.0.0***"
-msgstr "***终端贪吃蛇 0.0.0***"
+msgid "***Tsnake Version 0.0.1***"
+msgstr "***终端贪吃蛇 0.0.1***"
 
 #: src/game.cpp:22
 msgid "To read the handbook, please use --help option"
