@@ -52,11 +52,6 @@ bool game_play_step ()
 	return false;
 }
 
-int calculate_speed ()
-{
-	return 20;
-}
-
 void game_play ()
 {
 	last_move_time = time_slices;
@@ -111,5 +106,10 @@ void game_play ()
 			break;
 		}
 		update_scores_buf ();
+		if (scores >= calculate_maxscore()) {
+			level++;
+			enter_end (true);
+			return;
+		}
 	}
 }

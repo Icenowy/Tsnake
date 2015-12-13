@@ -60,6 +60,8 @@ void update_scores_buf ()
 	std::string sc, mv;
 	sc += gettext ("Scores: ");
 	sc += std::to_string (scores);
+	sc += "/";
+	sc += std::to_string (calculate_maxscore ());
 	mv += gettext ("Moves: ");
 	mv += std::to_string (moves);
 	bufgoods->buffer[0] = sc;
