@@ -12,7 +12,20 @@ void snake::draw_body (point p)
 
 void snake::draw_head ()
 {
-	mvwaddch (map_win, body.front ().y, body.front ().x, CH_SNAKE_HEAD);
+	switch (direction) {
+	case UP:
+		mvwaddch (map_win, body.front ().y, body.front ().x, CH_SNAKE_HEAD_UP);
+		break;
+	case DOWN:
+		mvwaddch (map_win, body.front ().y, body.front ().x, CH_SNAKE_HEAD_DOWN);
+		break;
+	case LEFT:
+		mvwaddch (map_win, body.front ().y, body.front ().x, CH_SNAKE_HEAD_LEFT);
+		break;
+	case RIGHT:
+		mvwaddch (map_win, body.front ().y, body.front ().x, CH_SNAKE_HEAD_RIGHT);
+		break;
+	}
 	wrefresh (map_win);
 }
 

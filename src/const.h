@@ -14,11 +14,15 @@
 
 // Chars
 #define CH_GROUND ' '
-#define CH_WALL '+'
+#define CH_WALL ACS_DIAMOND
 #define CH_FOOD 'O'
 #define CH_UNDEFINED '?'
 #define CH_SNAKE_HEAD '@'
-#define CH_SNAKE_BODY '.'
+#define CH_SNAKE_HEAD_UP '^'
+#define CH_SNAKE_HEAD_DOWN 'v'
+#define CH_SNAKE_HEAD_LEFT '<'
+#define CH_SNAKE_HEAD_RIGHT '>'
+#define CH_SNAKE_BODY ACS_BULLET
 
 // Gameplay
 #define INITIAL_LEVEL 1
