@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 02:08+0800\n"
+"POT-Creation-Date: 2015-12-13 11:00+0800\n"
 "PO-Revision-Date: 2015-12-12 22:11+0800\n"
 "Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
@@ -16,10 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/game.cpp:14
+#: src/mode_pause.cpp:12
+msgid "PAUSED. Press any key to continue."
+msgstr "游戏暂停，按任意键继续"
+
+#: src/game.cpp:21
 msgid "***Tsnake Version 0.0.0***"
 msgstr "***终端贪吃蛇 0.0.0***"
 
-#: src/game.cpp:15
+#: src/game.cpp:22
 msgid "To read the handbook, please use --help option"
 msgstr "使用 --help 参数来阅读游戏手册"

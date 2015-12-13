@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 02:08+0800\n"
+"POT-Creation-Date: 2015-12-13 11:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/game.cpp:14
+#: src/mode_pause.cpp:12
+msgid "PAUSED. Press any key to continue."
+msgstr ""
+
+#: src/game.cpp:21
 msgid "***Tsnake Version 0.0.0***"
 msgstr ""
 
-#: src/game.cpp:15
+#: src/game.cpp:22
 msgid "To read the handbook, please use --help option"
 msgstr ""
