@@ -72,6 +72,9 @@ install-bin: tsnake
 
 install: install-mo install-bin
 
+dependencies:
+	sh util/install-dependencies.sh
+
 clean:
 	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen po/*.mo
-.PHONY: all clean update-pot install-mo install-bin install
+.PHONY: all clean update-pot install-mo install-bin install dependencies
