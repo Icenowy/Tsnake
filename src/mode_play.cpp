@@ -24,6 +24,7 @@ bool game_play_step ()
 		return true;
 	case snake::FOOD_FOUND:
 		sn->increase++;
+		generate_food ();
 		return true;
 	case snake::DIE_KNOCK_WALL:
 		wininfo->putline (gettext ("So hard the wall is!"));
@@ -67,6 +68,27 @@ void game_play ()
 		case 'k':
 		case KEY_UP:
 			sn->direction = snake::UP;
+			if (!game_play_step ()) return;
+			last_move_time = time_slices;
+			break;
+		case 's':
+		case 'j':
+		case KEY_DOWN:
+			sn->direction = snake::DOWN;
+			if (!game_play_step ()) return;
+			last_move_time = time_slices;
+			break;
+		case 'a':
+		case 'h':
+		case KEY_LEFT:
+			sn->direction = snake::LEFT;
+			if (!game_play_step ()) return;
+			last_move_time = time_slices;
+			break;
+		case 'd':
+		case 'l':
+		case KEY_RIGHT:
+			sn->direction = snake::RIGHT;
 			if (!game_play_step ()) return;
 			last_move_time = time_slices;
 			break;
