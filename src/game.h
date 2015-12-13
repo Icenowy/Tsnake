@@ -21,7 +21,7 @@ void update_scores_buf ();
 
 #define SNAKE_PI 3.14159265358979323846
 
-inline int calculate_speed () { return level < 15 ? 20 - level : 5; }
+inline int calculate_speed () { return level < 10 ? 20 - level : 10; }
 
 inline int calculate_maxscore () { return level * 100; }
 

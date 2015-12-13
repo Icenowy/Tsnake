@@ -28,4 +28,10 @@
 #define SCORES_PER_FOOD 10
 #define SCORES_PER_MOVE 0
 
+// Map
+#define MAP_VERT_WALL_BASE 2
+#define MAP_VERT_WALL_ADV 1
+#define MAP_HORI_WALL_BASE 3
+#define MAP_HORI_WALL_ADV 0
+
 #endif
