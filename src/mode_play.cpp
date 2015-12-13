@@ -10,7 +10,7 @@
 #define TIME_SLICE_LENGTH 50 // in ms
 
 #define SCORES_PER_FOOD 10
-#define SCORES_PER_MOVE 1
+#define SCORES_PER_MOVE 0
 
 int last_move_time;
 
