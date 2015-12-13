@@ -8,11 +8,15 @@
 #include "map.h"
 #include "snake.h"
 
-static snake *sn;
+#include "mode_pause.h"
+#include "mode_play.h"
+#include "mode_end.h"
+
+snake *sn;
 
 enum game_mode {MODE_PLAY, MODE_PAUSE, MODE_END, MODE_QUIT} game_mode;
 
-void splash ()
+static void splash ()
 {
 	wininfo->putline (gettext ("***Tsnake Version 0.0.0***"));
 	wininfo->putline (gettext ("To read the handbook, please use --help option"));
@@ -25,11 +29,26 @@ void init_level ()
 	generate_food ();
 	if (sn) delete sn;
 	sn = snake::init_snake ();
+	time_slices = 0;
 }
 
-void main_loop ()
+static void main_loop ()
 {
-	
+	while (true) {
+		switch (game_mode) {
+		case MODE_PLAY:
+			game_play ();
+			break;
+		case MODE_PAUSE:
+			game_pause ();
+			break;
+		case MODE_END:
+			game_end ();
+			break;
+		case MODE_QUIT:
+			std::exit (0);
+		}
+	}
 }
 
 void game_main ()
@@ -37,4 +56,6 @@ void game_main ()
 	init_split ();
 	splash ();
 	init_level ();
+	enter_play ();
+	main_loop ();
 }
