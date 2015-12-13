@@ -2,10 +2,7 @@
 
 #include <cstdlib>
 
-#define INITIAL_INCREASE 3
-
-#define CH_SNAKE_HEAD '@'
-#define CH_SNAKE_BODY '.'
+#include "const.h"
 
 void snake::draw_body (point p)
 {

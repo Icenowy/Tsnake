@@ -4,6 +4,8 @@
 #include <curses.h>
 #include <cstdlib>
 
+#include "const.h"
+
 matrix<map_tile> *pmap;
 WINDOW *map_win;
 int map_width, map_height;
@@ -29,11 +31,6 @@ void randomize_map ()
 	}
 	invalid_map_rect (0, 0, map_width, map_height);
 }
-
-#define CH_GROUND ' '
-#define CH_WALL '+'
-#define CH_FOOD 'O'
-#define CH_UNDEFINED '?'
 
 void draw_map_tile (const map_tile &tile, int x, int y, bool refresh)
 {

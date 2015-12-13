@@ -7,10 +7,7 @@
 #include "tsgettext.h"
 #include "global_var.h"
 
-#define TIME_SLICE_LENGTH 50 // in ms
-
-#define SCORES_PER_FOOD 10
-#define SCORES_PER_MOVE 0
+#include "const.h"
 
 int last_move_time;
 

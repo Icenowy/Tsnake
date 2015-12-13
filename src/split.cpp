@@ -2,11 +2,7 @@
 #include <curses.h>
 #include <string>
 
-
-#define INFO_ROWS 4
-#define GOODS_LINES 29
-
-#define GOODS_FIXED_ROWS 24
+#include "const.h"
 
 void init_split ()
 {

@@ -7,7 +7,7 @@
 #include "tsgettext.h"
 #include "global_var.h"
 
-#define GAME_END_DELAY 3
+#include "const.h"
 
 void enter_end (bool good_end, bool init)
 {
