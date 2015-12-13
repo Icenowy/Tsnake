@@ -19,13 +19,16 @@
 
 #define DEFAULT_ROWS 18
 #define DEFAULT_LINES 48
+#define INITIAL_LEVEL 1
 
 static void init_environment ()
 {
 	pgrows = DEFAULT_ROWS;
 	pglines = DEFAULT_LINES;
+	level = 1;
 	const char *str_tslines = ::getenv ("TSNAKE_LINES");
 	const char *str_tsrows = ::getenv ("TSNAKE_ROWS");
+	const char *str_level = ::getenv ("TSNAKE_LEVEL");
 
 	if (str_tslines != NULL) {
 		int tslines = atoi (str_tslines);
@@ -39,6 +42,12 @@ static void init_environment ()
 		if (tsrows > 0) {
 			pgrows = tsrows;
 			if (pgrows < MIN_ROWS) pgrows = MIN_ROWS;
+		}
+	}
+	if (str_level != NULL) {
+		int lvl = atoi (str_level);
+		if (lvl > 0) {
+			level = lvl;
 		}
 	}
 

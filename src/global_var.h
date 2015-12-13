@@ -8,3 +8,5 @@ extern int pglines, pgrows;
 extern cur_strwin *wininfo;
 
 extern int time_slices;
+
+extern int level;
