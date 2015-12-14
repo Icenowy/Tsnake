@@ -38,6 +38,9 @@ bool game_play_step ()
 	case snake::DIE_KNOCK_SELF:
 		wininfo->putline (gettext ("Why is my body so hard..."));
 		goto bad_end;
+	case snake::DIE_MOD:
+		// Say nothing
+		goto bad_end;
 	case snake::DIE_UNKNOWN:
 		wininfo->putline (gettext ("What the hell is this?!"));
 		goto bad_end;

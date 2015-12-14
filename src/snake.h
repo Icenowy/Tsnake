@@ -47,6 +47,7 @@ public:
 	static const int DIE_CROSS_EDGE = 1;
 	static const int DIE_KNOCK_WALL = 2;
 	static const int DIE_KNOCK_SELF = 3;
+	static const int DIE_MOD = 4;
 	static const int DIE_UNKNOWN = 255;
 
 	friend int tsnake_mod_hit_mod_tile (int nx, int ny);
