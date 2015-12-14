@@ -72,5 +72,26 @@ void randomize_map ()
 		}
 	} while (!floodfill_verify (vrfy_mat));
 
+	for (int i = 0; i<map_width; i++) {
+		for (int j = 0; j<map_height; j++) {
+			// cave detect
+			if (! map() (i, j).type == map_tile::GROUND) continue;
+			if ((i == 0 || map() (i-1, j).type == map_tile::WALL) &&
+				(i == map_width - 1 || map() (i+1, j).type == map_tile::WALL)) {
+					if (i != 0)
+						map() (i-1, j).type = map_tile::GROUND;
+					else
+						map() (i+1, j).type = map_tile::GROUND;
+			}
+			if ((j == 0 || map() (i, j-1).type == map_tile::WALL) &&
+				(j == map_height - 1 || map() (i, j+1).type == map_tile::WALL)) {
+					if (j != 0)
+						map() (i, j-1).type = map_tile::GROUND;
+					else
+						map() (i, j+1).type = map_tile::GROUND;
+			}
+		}
+	}
+
 	invalid_map_rect (0, 0, map_width, map_height);
 }
