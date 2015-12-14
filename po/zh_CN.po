@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 21:00+0800\n"
+"POT-Creation-Date: 2015-12-14 21:06+0800\n"
 "PO-Revision-Date: 2015-12-12 22:11+0800\n"
 "Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
@@ -27,8 +27,12 @@ msgid "You lose. What a pity."
 msgstr "你输了。苦命的人儿啊！"
 
 #: src/mode_end.cpp:24
-msgid "Press 'p' to play, or press 'q' to quit"
-msgstr "按 p 键开始游戏，按 q 键退出。"
+msgid "Press 'p' to play, 'r' to refresh map"
+msgstr "按 p 键开始游戏，按 r 键换张地图。"
+
+#: src/mode_end.cpp:25
+msgid "or press 'q' to quit"
+msgstr "或者按 q 键退出。"
 
 #: src/mode_play.cpp:33
 msgid "So hard the wall is!"

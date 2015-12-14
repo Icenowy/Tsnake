@@ -21,7 +21,8 @@ void enter_end (bool good_end, bool init)
 		sleep (GAME_END_DELAY);
 		init_level ();
 	}
-	wininfo->putline (gettext ("Press 'p' to play, or press 'q' to quit"));
+	wininfo->putline (gettext ("Press 'p' to play, 'r' to refresh map"));
+	wininfo->putline (gettext ("or press 'q' to quit"));
 	game_mode = MODE_END;
 	wtimeout (playground, -1);
 }
@@ -31,10 +32,13 @@ void game_end ()
 	while(true) {
 		switch (wgetch (playground)) {
 		case 'p':
-			enter_play();
+			enter_play ();
 			return;
 		case 'q':
 			game_mode = MODE_QUIT;
+			return;
+		case 'r':
+			init_level ();
 			return;
 		default:
 			break;
