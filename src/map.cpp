@@ -57,6 +57,10 @@ void invalid_map_rect (int x1, int y1, int width, int height, bool refresh)
 
 void generate_food ()
 {
+	if (mod_has_food_gen ()) {
+		mod_food_gen ();
+		return;
+	}
 	int x,y;
 	do {
 		x = std::rand () % map_width;

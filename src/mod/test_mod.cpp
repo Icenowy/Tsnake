@@ -19,6 +19,18 @@ void tsnake_mod_map_gen ()
 	map() (0,0) = map_tile (map_tile::MOD_MIN);
 }
 
+void tsnake_mod_food_gen ()
+{
+        for (int i = 0; i < map_width; i++)
+                for (int j = 0; j < map_height; j++) {
+                        if (map() (i,j).type == map_tile::GROUND) {
+				map() (i,j) = map_tile (map_tile::FOOD);
+				invalid_map_tile (i, j);
+				return;
+			}
+		}
+}
+
 void tsnake_mod_int_timer ()
 {
 }

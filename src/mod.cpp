@@ -12,6 +12,7 @@ static void *mod_so;
 
 static chtype (*m_get_tile_char) (const map_tile *tile);
 static void (*m_map_gen) ();
+static void (*m_food_gen) ();
 static void (*m_int_timer) ();
 static void (*m_int_move) ();
 static void (*m_init_level) ();
@@ -36,6 +37,7 @@ void mod_init ()
 		wininfo->putline (modname);
 		m_get_tile_char = (chtype (*) (const map_tile *tile)) dlsym (mod_so, "tsnake_mod_get_tile_char");
 		m_map_gen = (void (*) ()) dlsym (mod_so, "tsnake_mod_map_gen");
+		m_food_gen = (void (*) ()) dlsym (mod_so, "tsnake_mod_food_gen");
 		m_int_timer = (void (*) ()) dlsym (mod_so, "tsnake_mod_int_timer");
 		m_int_move = (void (*) ()) dlsym (mod_so, "tsnake_mod_int_move");
 		m_init_level = (void (*) ()) dlsym (mod_so, "tsnake_mod_init_level");
@@ -57,6 +59,16 @@ bool mod_has_map_gen ()
 void mod_map_gen ()
 {
 	if (m_map_gen != nullptr) m_map_gen ();
+}
+
+bool mod_has_food_gen ()
+{
+	return m_food_gen != nullptr;
+}
+
+void mod_food_gen ()
+{
+	if (m_food_gen != nullptr) m_food_gen ();
 }
 
 void mod_int_timer ()

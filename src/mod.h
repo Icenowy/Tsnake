@@ -11,6 +11,10 @@ bool mod_has_map_gen ();
 
 void mod_map_gen ();
 
+bool mod_has_food_gen ();
+
+void mod_food_gen ();
+
 void mod_int_timer ();
 
 void mod_int_move ();

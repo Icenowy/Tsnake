@@ -12,6 +12,7 @@
 
 extern "C" chtype tsnake_mod_get_tile_char (const map_tile *tile);
 extern "C" void tsnake_mod_map_gen ();
+extern "C" void tsnake_mod_food_gen ();
 extern "C" void tsnake_mod_int_timer ();
 extern "C" void tsnake_mod_int_move ();
 extern "C" void tsnake_mod_init_level ();
