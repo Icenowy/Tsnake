@@ -82,6 +82,9 @@ static void init_screen ()
 		std::exit (1);
 	}
 
+	init_pair (1, COLOR_RED, COLOR_BLACK);
+	init_pair (2, COLOR_YELLOW, COLOR_BLACK);
+
 	::noecho();
 	::cbreak();
 	::curs_set(0);
