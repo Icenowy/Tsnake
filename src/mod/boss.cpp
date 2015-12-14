@@ -152,7 +152,7 @@ void tsnake_mod_int_timer ()
 		}
 		int res = bs->step ();
 		if (res == snake::DIE_MOD) {
-			enter_end (false);
+			enter_end (true);
 			mode_play_force_exit = true;
 		}
 	}
