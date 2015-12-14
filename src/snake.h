@@ -9,10 +9,10 @@
 extern "C" int tsnake_mod_hit_mod_tile (int nx, int ny);
 
 class snake {
-	std::deque<point> body;
 	void draw_head ();
 	void draw_body (point p);
 public:
+	std::deque<point> body;
 	int increase;
 	int direction;
 	bool allow_cross_edge;
