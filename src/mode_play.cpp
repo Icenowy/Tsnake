@@ -19,6 +19,8 @@ void enter_play ()
 	wtimeout (playground, TIME_SLICE_LENGTH);
 }
 
+volatile bool mode_play_force_exit;
+
 bool game_play_step ()
 {
 	switch (sn->step ()) {
@@ -57,8 +59,9 @@ bool game_play_step ()
 
 void game_play ()
 {
+	mode_play_force_exit = false;
 	last_move_time = time_slices;
-	while (true) {
+	while (! mode_play_force_exit) {
 		int ch;
 		ch = wgetch (playground);
 		time_slices++;
