@@ -73,6 +73,15 @@ static void init_screen ()
 		std::exit (1);
 	}
 
+	start_color ();
+
+	if (COLOR_PAIRS < 16) {
+		::endwin ();
+		std::cerr << "Your terminal do not support enough colors.\n";
+		std::cerr << "Maybe you should change to another terminal.\n";
+		std::exit (1);
+	}
+
 	::noecho();
 	::cbreak();
 	::curs_set(0);
