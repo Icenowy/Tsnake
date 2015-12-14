@@ -24,7 +24,7 @@ DESTDIR ?=
 
 all: tsnake mods
 
-mods: src/mod/test_mod.so
+mods: src/mod/test_mod.so src/mod/tradition_map.so
 
 util/hbgen: util/hbgen.cpp
 	$(HOSTCXX) util/hbgen.cpp -o util/hbgen

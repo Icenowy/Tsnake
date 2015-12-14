@@ -32,7 +32,6 @@ void mod_init ()
 	else has_mod = false;
 
 	if (has_mod) {
-		wininfo->putline ("Installed mod");
 		wininfo->putline (modname);
 		m_get_tile_char = (chtype (*) (const map_tile *tile)) dlsym (mod_so, "tsnake_mod_get_tile_char");
 		m_map_gen = (void (*) ()) dlsym (mod_so, "tsnake_mod_map_gen");
