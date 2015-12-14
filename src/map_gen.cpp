@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 #include "const.h"
+#include "mod.h"
 
 static void floodfill (matrix<bool> &mat, int x, int y)
 {
@@ -35,6 +36,11 @@ bool floodfill_verify (matrix<bool> &mat)
 
 void randomize_map ()
 {
+	if (mod_has_map_gen ()) {
+		mod_map_gen ();
+		invalid_map_rect (0, 0, map_width, map_height);
+		return;
+	}
 	int map_level = (level > MAX_MAP_LEVEL) ? MAX_MAP_LEVEL : level;
 	matrix<bool> vrfy_mat (map_width, map_height);
 	do {

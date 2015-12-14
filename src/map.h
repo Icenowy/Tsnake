@@ -9,12 +9,15 @@ struct map_tile {
 		GROUND = 0,
 		WALL = 1,
 		FOOD = 2,
-		RESERVED = 3 // RESERVED means that the tile is reserved by other modules
+		RESERVED = 3, // RESERVED means that the tile is reserved by other modules
+		MOD_MIN = 201, // Minimum value for MODs
+		MOD_MAX = 255 // Maximum value for MODs
 	;
 	int type;
 
 	union {
 		int reserved_type; // for RESERVED
+		int parameter_value; // for MODs
 	};
 
 	map_tile () : type (GROUND) {}

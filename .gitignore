@@ -2,6 +2,7 @@
 tsnake
 src/handbook_txt.cpp
 util/hbgen
+*.so
 
 share
 bin

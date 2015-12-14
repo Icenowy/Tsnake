@@ -14,7 +14,7 @@
 
 // Chars
 #define CH_GROUND ' '
-#define CH_WALL ACS_CKBOARD
+#define CH_WALL ACS_BOARD
 #define CH_FOOD 'O'
 #define CH_UNDEFINED '?'
 #define CH_SNAKE_HEAD '@'

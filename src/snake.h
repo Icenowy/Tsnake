@@ -6,6 +6,8 @@
 
 #include <deque>
 
+extern "C" int tsnake_mod_hit_mod_tile (int nx, int ny);
+
 class snake {
 	std::deque<point> body;
 	void draw_head ();
@@ -38,12 +40,16 @@ public:
 	static const int RIGHT = 2;
 	static const int LEFT = 3;
 
+	// negative value means do not die
+	// positive value means death
 	static const int FOOD_FOUND = -1;
 	static const int ALIVE = 0;
 	static const int DIE_CROSS_EDGE = 1;
 	static const int DIE_KNOCK_WALL = 2;
 	static const int DIE_KNOCK_SELF = 3;
 	static const int DIE_UNKNOWN = 255;
+
+	friend int tsnake_mod_hit_mod_tile (int nx, int ny);
 };
 
 #endif

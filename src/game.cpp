@@ -13,6 +13,8 @@
 #include "mode_play.h"
 #include "mode_end.h"
 
+#include "mod.h"
+
 snake *sn;
 
 enum game_mode game_mode;
@@ -34,6 +36,7 @@ void init_level ()
 	sn = snake::init_snake ();
 	time_slices = scores = moves = 0;
 	update_scores_buf ();
+	mod_init_level ();
 }
 
 static void main_loop ()
@@ -73,6 +76,7 @@ void game_main ()
 {
 	init_split ();
 	splash ();
+	mod_init ();
 	init_level ();
 	enter_end (true, true);
 	main_loop ();

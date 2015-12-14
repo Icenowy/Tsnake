@@ -6,6 +6,8 @@
 
 #include "const.h"
 
+#include "mod.h"
+
 matrix<map_tile> *pmap;
 WINDOW *map_win;
 int map_width, map_height;
@@ -34,7 +36,10 @@ void draw_map_tile (const map_tile &tile, int x, int y, bool refresh)
 	case map_tile::RESERVED:
 		break;
 	default:
-		mvwaddch (map_win, y, x, CH_UNDEFINED);
+		if (tile.type >= map_tile::MOD_MIN && tile.type <= map_tile::MOD_MAX)
+			mvwaddch (map_win, y, x, mod_get_tile_char (tile) );
+		else
+			mvwaddch (map_win, y, x, CH_UNDEFINED);
 		break;
 	}
 	if (refresh) wrefresh (map_win);

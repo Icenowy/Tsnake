@@ -3,6 +3,7 @@
 #include <cstdlib>
 
 #include "const.h"
+#include "mod.h"
 
 void snake::draw_body (point p)
 {
@@ -85,7 +86,21 @@ int snake::step ()
 			if (pt.x == nx && pt.y == ny)
 				return DIE_KNOCK_SELF;
 		}
+		goto unknown;
+	default:
+		if (map() (nx, ny).type >= map_tile::MOD_MIN &&
+			map() (nx, ny).type <= map_tile::MOD_MAX) {
+			int tmp_val;
+			if ( (tmp_val = mod_hit_mod_tile (nx, ny)) > 0) {
+				return tmp_val;
+			}
+			else {
+				ret = tmp_val;
+				goto cont;
+			}
+		}
 	}
+	unknown:
 	return DIE_UNKNOWN;
 	cont:
 	map() (nx, ny).reserve ();

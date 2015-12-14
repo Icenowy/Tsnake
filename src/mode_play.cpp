@@ -9,6 +9,8 @@
 
 #include "const.h"
 
+#include "mod.h"
+
 int last_move_time;
 
 void enter_play ()
@@ -108,5 +110,6 @@ void game_play ()
 			enter_end (true);
 			return;
 		}
+		mod_int_timer ();
 	}
 }
