@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 00:43+0800\n"
+"POT-Creation-Date: 2015-12-14 21:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,19 +31,19 @@ msgstr ""
 msgid "Press 'p' to play, or press 'q' to quit"
 msgstr ""
 
-#: src/mode_play.cpp:31
+#: src/mode_play.cpp:33
 msgid "So hard the wall is!"
 msgstr ""
 
-#: src/mode_play.cpp:34
+#: src/mode_play.cpp:36
 msgid "Destiny cannot be escaped."
 msgstr ""
 
-#: src/mode_play.cpp:37
+#: src/mode_play.cpp:39
 msgid "Why is my body so hard..."
 msgstr ""
 
-#: src/mode_play.cpp:40
+#: src/mode_play.cpp:42
 msgid "What the hell is this?!"
 msgstr ""
 
@@ -51,18 +51,22 @@ msgstr ""
 msgid "PAUSED. Press any key to continue."
 msgstr ""
 
-#: src/game.cpp:24
-msgid "***Tsnake Version 0.0.3***"
+#: src/game.cpp:26
+msgid "***Welcome to Tsnake***"
 msgstr ""
 
-#: src/game.cpp:25
+#: src/game.cpp:27
 msgid "To read the handbook, please use --help option"
 msgstr ""
 
-#: src/game.cpp:61
+#: src/game.cpp:64
 msgid "Scores: "
 msgstr ""
 
-#: src/game.cpp:65
+#: src/game.cpp:68
 msgid "Moves: "
+msgstr ""
+
+#: src/mod.cpp:23
+msgid "You're trying to play a mod"
 msgstr ""

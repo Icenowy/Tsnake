@@ -56,7 +56,7 @@ src/mod.o: src/mod.cpp src/mod.h src/const.h src/map.h
 src/handbook_txt.o: src/handbook_txt.cpp src/handbook.h
 
 %.so: %.cpp
-	$(CXXLD) $< -o $@ -shared -fPIC
+	$(CXXLD) $< -o $@ -shared -fPIC $(CXXSTD)
 
 src/handbook_txt.cpp: src/handbook.txt util/hbgen
 	util/hbgen < src/handbook.txt > src/handbook_txt.cpp
@@ -83,5 +83,5 @@ dependencies:
 	sh util/install-dependencies.sh
 
 clean:
-	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen po/*.mo
+	rm -f $(TSNAKE_OBJS) tsnake src/handbook_txt.cpp util/hbgen po/*.mo src/mod/*.so
 .PHONY: all clean update-pot install-mo install-bin install dependencies

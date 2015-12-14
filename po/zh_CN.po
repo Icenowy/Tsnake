@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 00:43+0800\n"
+"POT-Creation-Date: 2015-12-14 21:00+0800\n"
 "PO-Revision-Date: 2015-12-12 22:11+0800\n"
 "Last-Translator: Icenowy Zheng <icenowy@outlook.com>\n"
 "Language-Team: Icenowy Zheng <icenowy@outlook.com>\n"
@@ -30,19 +30,19 @@ msgstr "你输了。苦命的人儿啊！"
 msgid "Press 'p' to play, or press 'q' to quit"
 msgstr "按 p 键开始游戏，按 q 键退出。"
 
-#: src/mode_play.cpp:31
+#: src/mode_play.cpp:33
 msgid "So hard the wall is!"
 msgstr "这墙好硬啊……"
 
-#: src/mode_play.cpp:34
+#: src/mode_play.cpp:36
 msgid "Destiny cannot be escaped."
 msgstr "命运怎是蝼蚁可以逃离的！"
 
-#: src/mode_play.cpp:37
+#: src/mode_play.cpp:39
 msgid "Why is my body so hard..."
 msgstr "我的身体……你为什么这么硬……"
 
-#: src/mode_play.cpp:40
+#: src/mode_play.cpp:42
 msgid "What the hell is this?!"
 msgstr "这是什么鬼？！"
 
@@ -50,21 +50,28 @@ msgstr "这是什么鬼？！"
 msgid "PAUSED. Press any key to continue."
 msgstr "游戏暂停，按任意键继续"
 
-#: src/game.cpp:24
-msgid "***Tsnake Version 0.0.3***"
-msgstr "***终端贪吃蛇 0.0.3***"
+#: src/game.cpp:26
+msgid "***Welcome to Tsnake***"
+msgstr "***欢迎来到终端贪吃蛇的世界***"
 
-#: src/game.cpp:25
+#: src/game.cpp:27
 msgid "To read the handbook, please use --help option"
 msgstr "使用 --help 参数来阅读游戏手册"
 
-#: src/game.cpp:61
+#: src/game.cpp:64
 msgid "Scores: "
 msgstr "已得分数："
 
-#: src/game.cpp:65
+#: src/game.cpp:68
 msgid "Moves: "
 msgstr "移动次数："
+
+#: src/mod.cpp:23
+msgid "You're trying to play a mod"
+msgstr "你启用了一个MOD"
+
+#~ msgid "***Tsnake Version 0.0.3***"
+#~ msgstr "***终端贪吃蛇 0.0.3***"
 
 #~ msgid "Invalid input"
 #~ msgstr "输入无效。"
