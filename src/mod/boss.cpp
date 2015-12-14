@@ -174,6 +174,8 @@ void tsnake_mod_init_level ()
 	bs = boss::init_boss ();
 	generate_pseudo_food ();
 	sn->allow_cross_edge = true;
+	wininfo->putline ("BOSS mode. Inspired and designed by");
+	wininfo->putline ("Shangguan Lingyun");
 }
 
 int tsnake_mod_hit_mod_tile (int nx, int ny)
