@@ -1,10 +1,12 @@
 #include "mod_interface.h"
 
 #include <cstdlib>
+#include <cstdint>
 
 #define TILE_CUT1 (map_tile::MOD_MIN)
 #define TILE_SUPERFOOD (map_tile::MOD_MIN + 1)
 #define TILE_SUPERCUT (map_tile::MOD_MIN + 2)
+#define TILE_LONGLONG (map_tile::MOD_MIN + 3)
 
 #define PROPS_INTERVAL 100
 
@@ -17,16 +19,18 @@ chtype tsnake_mod_get_tile_char (const map_tile *tile)
 		return 'O' | A_REVERSE;
 	case TILE_SUPERCUT:
 		return '0' | COLOR_PAIR (1) | A_REVERSE;
+	case TILE_LONGLONG:
+		return 'I';
 	}
 	return CH_UNDEFINED;
 }
 
 static int movcnt;
 
-#define TILES 3
+#define TILES 4
 
-int tiles_prob[] = {10, 10, 1, };
-int tiles_val[] = {TILE_CUT1, TILE_SUPERFOOD, TILE_SUPERCUT, };
+int tiles_prob[] = {10, 10, 1, 1, };
+int tiles_val[] = {TILE_CUT1, TILE_SUPERFOOD, TILE_SUPERCUT, TILE_LONGLONG, };
 
 static int random_tile ()
 {
@@ -83,6 +87,10 @@ int tsnake_mod_hit_mod_tile (int nx, int ny)
 	case TILE_SUPERFOOD:
 		scores += 50;
 		sn->increase += 3;
+		goto cont;
+	case TILE_LONGLONG:
+		scores = calculate_maxscore () - 1;
+		sn->increase = 30000;
 		goto cont;
 	}
 	cont:
