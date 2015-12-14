@@ -3,7 +3,7 @@
 chtype tsnake_mod_get_tile_char (const map_tile *tile)
 {
 	if (tile->type == map_tile::MOD_MIN) {
-		return 'M';
+		return 'O' | A_REVERSE;
 	}
 	return CH_UNDEFINED;
 }
@@ -23,8 +23,25 @@ void tsnake_mod_int_timer ()
 {
 }
 
+static int movcnt;
+
+void tsnake_mod_int_move ()
+{
+	movcnt++;
+	if (! (movcnt % 30))
+		for (int i = 0; i<10; i++) {
+			if (map() (i,0).type == map_tile::GROUND) {
+				map() (i,0) = map_tile (map_tile::MOD_MIN);
+				invalid_map_tile (i, 0);
+				wininfo->putline ("Test tile grown.");
+				break;
+			}
+		}
+}
+
 void tsnake_mod_init_level ()
 {
+	movcnt = 0;
 }
 
 int tsnake_mod_hit_mod_tile (int nx, int ny)

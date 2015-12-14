@@ -44,6 +44,7 @@ bool game_play_step ()
 	}
 	good_end:
 	moves++;
+	mod_int_move ();
 	scores += SCORES_PER_MOVE;
 	return true;
 	bad_end:

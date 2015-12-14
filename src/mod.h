@@ -13,6 +13,8 @@ void mod_map_gen ();
 
 void mod_int_timer ();
 
+void mod_int_move ();
+
 void mod_init_level ();
 
 int mod_hit_mod_tile (int nx, int ny);

@@ -13,6 +13,7 @@ static void *mod_so;
 static chtype (*m_get_tile_char) (const map_tile *tile);
 static void (*m_map_gen) ();
 static void (*m_int_timer) ();
+static void (*m_int_move) ();
 static void (*m_init_level) ();
 static int (*m_hit_mod_tile) (int nx, int ny);
 
@@ -36,6 +37,7 @@ void mod_init ()
 		m_get_tile_char = (chtype (*) (const map_tile *tile)) dlsym (mod_so, "tsnake_mod_get_tile_char");
 		m_map_gen = (void (*) ()) dlsym (mod_so, "tsnake_mod_map_gen");
 		m_int_timer = (void (*) ()) dlsym (mod_so, "tsnake_mod_int_timer");
+		m_int_move = (void (*) ()) dlsym (mod_so, "tsnake_mod_int_move");
 		m_init_level = (void (*) ()) dlsym (mod_so, "tsnake_mod_init_level");
 		m_hit_mod_tile = (int (*) (int nx, int ny)) dlsym (mod_so, "tsnake_mod_hit_mod_tile");
 	}	
@@ -60,6 +62,11 @@ void mod_map_gen ()
 void mod_int_timer ()
 {
 	if (m_int_timer != nullptr) m_int_timer ();
+}
+
+void mod_int_move ()
+{
+	if (m_int_move != nullptr) m_int_move ();
 }
 
 void mod_init_level ()
