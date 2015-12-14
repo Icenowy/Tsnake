@@ -8,7 +8,7 @@
 #define TILE_SUPERCUT (map_tile::MOD_MIN + 2)
 #define TILE_LONGLONG (map_tile::MOD_MIN + 3)
 
-#define PROPS_INTERVAL 100
+#define PROPS_INTERVAL 50
 
 chtype tsnake_mod_get_tile_char (const map_tile *tile)
 {
