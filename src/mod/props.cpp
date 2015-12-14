@@ -4,6 +4,7 @@
 
 #define TILE_CUT1 (map_tile::MOD_MIN)
 #define TILE_SUPERFOOD (map_tile::MOD_MIN + 1)
+#define TILE_SUPERCUT (map_tile::MOD_MIN + 2)
 
 #define PROPS_INTERVAL 100
 
@@ -11,19 +12,21 @@ chtype tsnake_mod_get_tile_char (const map_tile *tile)
 {
 	switch (tile->type) {
 	case TILE_CUT1:
-		return 'O' | A_REVERSE;
-	case TILE_SUPERFOOD:
 		return 'O' | COLOR_PAIR (1);
+	case TILE_SUPERFOOD:
+		return 'O' | A_REVERSE;
+	case TILE_SUPERCUT:
+		return '0' | COLOR_PAIR (1) | A_REVERSE;
 	}
 	return CH_UNDEFINED;
 }
 
 static int movcnt;
 
-#define TILES 2
+#define TILES 3
 
-int tiles_prob[] = {1, 1, };
-int tiles_val[] = {TILE_CUT1, TILE_SUPERFOOD, };
+int tiles_prob[] = {10, 10, 1, };
+int tiles_val[] = {TILE_CUT1, TILE_SUPERFOOD, TILE_SUPERCUT, };
 
 static int random_tile ()
 {
@@ -63,6 +66,14 @@ int tsnake_mod_hit_mod_tile (int nx, int ny)
 	switch (map() (nx, ny).type) {
 	case TILE_CUT1:
 		if (sn->body.size() > 1) {
+			point bk = sn->body.back ();
+			map() (bk.x, bk.y).dereserve ();
+			invalid_map_tile (bk.x, bk.y);
+			sn->body.pop_back ();
+		}
+		goto cont;
+	case TILE_SUPERCUT:
+		while (sn->body.size() > 1) {
 			point bk = sn->body.back ();
 			map() (bk.x, bk.y).dereserve ();
 			invalid_map_tile (bk.x, bk.y);
