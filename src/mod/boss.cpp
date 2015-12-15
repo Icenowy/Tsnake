@@ -135,6 +135,34 @@ static boss *bs;
 
 static int tmcnt;
 
+bool boss_in_snake (point p)
+{
+	for (point pt : sn->body) {
+		if (pt.x == p.x && pt.y == p.y) return true;
+	}
+	return false;
+}
+
+bool boss_check_up (point p)
+{
+	return boss_in_snake (point (p.x, (p.y - 1 + map_height) % map_height));
+}
+
+bool boss_check_down (point p)
+{
+	return boss_in_snake (point (p.x, (p.y + 1 + map_height) % map_height));
+}
+
+bool boss_check_left (point p)
+{
+	return boss_in_snake (point ( (p.x - 1 + map_width) % map_width, p.y));
+}
+
+bool boss_check_right (point p)
+{
+	return boss_in_snake (point ( (p.x + 1 + map_width) % map_width, p.y));
+}
+
 void tsnake_mod_int_timer ()
 {
 	tmcnt++;
@@ -150,6 +178,31 @@ void tsnake_mod_int_timer ()
 			else
 				bs->direction = newdir;
 		}
+		int ndir2 = bs->direction;
+		point he = bs->body.front ();
+		switch (bs->direction) {
+		case snake::UP:
+			if (boss_check_up (he)) goto check_vert;
+			goto no_check;
+		case snake::DOWN:
+			if (boss_check_down (he)) goto check_vert;
+			goto no_check;
+		case snake::LEFT:
+			if (boss_check_left (he)) goto check_hori;
+			goto no_check;
+		case snake::RIGHT:
+			if (boss_check_right (he)) goto check_hori;
+			goto no_check;
+		}
+		check_vert:
+		if (! boss_check_left (he)) ndir2 = snake::LEFT;
+		if (! boss_check_right (he)) ndir2 = snake::RIGHT;
+		goto no_check;
+		check_hori:
+		if (! boss_check_up (he)) ndir2 = snake::UP;
+		if (! boss_check_down (he)) ndir2 = snake::DOWN;
+		no_check:
+		bs->direction = ndir2;
 		int res = bs->step ();
 		if (res == snake::DIE_MOD) {
 			level++;
