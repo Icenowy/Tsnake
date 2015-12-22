@@ -12,7 +12,9 @@ void init_split ()
 	WINDOW *goods_line = subwin (stdscr, pgrows + INFO_ROWS + 2, 1, 0, pglines+2);
 	goods = subwin (stdscr, pgrows + INFO_ROWS + 2, GOODS_LINES, 0, pglines+3);
 
+	wattron (pg_with_box, A_REVERSE);
 	wborder (pg_with_box, 0, 0, 0, 0, 0, 0, 0, 0);
+	wattroff (pg_with_box, A_REVERSE);
 	mvwvline (goods_line, 0, 0, 0, pgrows + INFO_ROWS + 2);
 
 	wininfo = new cur_strwin (info, INFO_ROWS);
